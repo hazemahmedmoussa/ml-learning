@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مسار إعداد وتعلم الآلة | المهندس حازم أحمد</title>
+
+    <meta property="og:title" content="مسار إعداد وتعلم الآلة | المهندس حازم أحمد">
+    <meta property="og:description" content="مسار الإعداد الاحترافي لتعلم الآلة - دورات معالجة البيانات وتصويرها، هندسة البيانات، والتدريب الاحترافي.">
+    <meta property="og:type" content="website">
+
+    <style>
+        :root {
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --glass-bg: rgba(20, 20, 20, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.08);
+
+            --gray-1: #333333;
+            --gray-2: #555555;
+            --gray-3: #888888;
+            --gray-4: #bbbbbb;
+            --gray-5: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: #050505;
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 24px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            min-width: 1200px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70vw;
+            height: 70vh;
+            background: radial-gradient(circle, rgba(120, 120, 120, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-section { text-align: center; margin-bottom: 30px; }
+        .header-section h1 {
+            font-size: 2.8rem;
+            margin: 0 0 15px;
+            background: linear-gradient(90deg, #888, #fff, #888);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+
+        .instructor-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 25px 35px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        .instructor-box h2 { color: #fff; margin: 0 0 10px 0; font-size: 1.5rem; letter-spacing: 0.5px; }
+        .instructor-box p { color: var(--text-muted); font-size: 1.05rem; margin: 0; line-height: 1.8; }
+        .instructor-box strong { color: #fff; }
+
+        .path-section { width: 100%; margin: 0 0 40px; text-align: center; }
+        .path-banner {
+            display: inline-block; margin: 0 auto; padding: 18px 45px; border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 0 25px rgba(255,255,255,0.05);
+        }
+        .pb-main { font-size: 1.6rem; font-weight: bold; color: #fff; line-height: 1.4; }
+        .pb-sub { font-size: 1.1rem; margin-top: 8px; color: var(--text-muted); }
+        .pb-tag { display: inline-block; direction: ltr; background: #fff; color: #000; padding: 2px 12px; font-weight: bold; border-radius: 2px; margin: 0 4px; font-size: 0.95rem; }
+
+        .pricing-container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            grid-template-rows: repeat(14, auto);
+            column-gap: 20px;
+            row-gap: 0;
+        }
+
+        .plan-card {
+            position: relative;
+            display: grid;
+            grid-row: span 7;
+            grid-column: span 6;
+            break-inside: avoid;
+            grid-template-rows: subgrid;
+            padding: 28px 22px;
+            border-radius: 12px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-top: 6px solid;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .marketing-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #000;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            white-space: nowrap;
+            z-index: 10;
+        }
+
+        .plan-1 { border-top-color: var(--gray-1); }
+        .plan-2 { border-top-color: var(--gray-2); }
+        .plan-3 { border-top-color: var(--gray-3); }
+        .plan-4 { border-top-color: var(--gray-4); border-left: 1px solid rgba(187, 187, 187, 0.2); border-right: 1px solid rgba(187, 187, 187, 0.2); }
+        .plan-5 {
+            border-top-color: var(--gray-5);
+            border-left: 1px solid rgba(255,255,255,0.4);
+            border-right: 1px solid rgba(255,255,255,0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 0 45px rgba(255,255,255,0.08);
+        }
+
+        .plan-1 .plan-title { color: #aaa; }
+        .plan-2 .plan-title { color: #ccc; }
+        .plan-3 .plan-title { color: #ddd; }
+        .plan-4 .plan-title { color: #eee; }
+        .plan-5 .plan-title { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+        .plan-4, .plan-5 { margin-top: 50px; }
+        .plan-4 { grid-column: 1 / span 9; }
+        .plan-5 { grid-column: 10 / span 9; }
+
+        .plan-title { font-size: 1.4rem; font-weight: bold; margin-bottom: 8px; }
+        .plan-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 22px; }
+
+        .plan-price {
+            font-size: 2.6rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            align-self: start;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 16px 0;
+            margin-bottom: 20px;
+        }
+        .plan-price span { font-size: 1rem; color: var(--text-muted); margin-right: 8px; font-weight: normal; }
+        .plan-price .old-price {
+            font-size: 1.25rem; font-weight: normal; color: #7a7a7a;
+            margin-right: 12px; text-decoration: line-through;
+            text-decoration-thickness: 2px; text-decoration-color: rgba(255,255,255,0.55);
+        }
+
+        .libs { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px; margin-bottom: 20px; }
+        .lib {
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 0;
+            direction: ltr;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ccc;
+        }
+        .plan-5 .lib { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+        .section-label { font-size: 0.95rem; color: #fff; font-weight: bold; margin-bottom: 15px; }
+
+        .features-list { list-style: none; padding: 0; margin: 0; }
+
+        .features-list li {
+            position: relative;
+            padding: 0 0 14px 0;
+            margin-bottom: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .features-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .features-list li strong { display: block; color: #e0e0e0; font-size: 0.95rem; margin-bottom: 3px; }
+        .plan-5 .features-list li strong { color: #fff; }
+
+        .features-list li.title-only { padding-bottom: 10px; margin-bottom: 10px; }
+        .features-list li.title-only strong { margin-bottom: 0; }
+
+        .features-list li.plus-label { border-bottom: none; padding-bottom: 0; margin: 22px 0 14px; cursor: default; }
+        .features-list li.plus-label strong { color: #fff; font-size: 1.05rem; margin-bottom: 0; }
+
+        .plan-actions {
+            display: flex; gap: 10px; align-items: stretch;
+            margin-top: 24px; padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .plan-actions a {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 11px 14px; border-radius: 8px; text-decoration: none;
+            font-family: inherit; font-size: 1rem; font-weight: bold;
+            transition: transform 0.15s ease, background 0.2s ease;
+        }
+        .plan-actions a:hover { transform: translateY(-1px); }
+        .btn-wa { background: rgba(37,211,102,0.12); color: #25D366; border: 1px solid #25D366; }
+        .btn-wa:hover { background: rgba(37,211,102,0.22); }
+        .btn-wa svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+
+        .toggle-btn {
+            display: block; width: 100%; margin-top: 16px; padding: 10px;
+            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 8px; color: #fff; font-family: inherit; font-size: 0.95rem;
+            font-weight: bold; cursor: pointer; transition: background 0.2s;
+        }
+        .toggle-btn:hover { background: rgba(255,255,255,0.13); }
+
+        .collapsed .desc .d-rest { display: none; }
+        .collapsed .desc .d-short::after { content: "…"; }
+        .collapsed .features-list li.extra { display: none; }
+        .collapsed .features-list li.last-visible { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .features-list li.includes-wrap { border-bottom: none; padding: 0; margin: 0 0 6px; cursor: default; }
+        .features-list li.includes-wrap:hover { background: none; }
+        .features-list .includes-grid {
+            list-style: none; padding: 0; margin: 0;
+            display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; row-gap: 0;
+        }
+        .features-list .includes-grid li {
+            border: none; margin: 0; padding: 0 0 10px; cursor: default;
+            font-size: 0.88rem; color: #cfcfcf; line-height: 1.6;
+        }
+        .features-list .includes-grid li:hover { background: none; }
+
+        .features-list li.live-session {
+            background: linear-gradient(90deg, rgba(255,255,255,0.05), transparent);
+            padding: 10px 28px 10px 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-right: 3px solid #fff;
+        }
+        .features-list li.live-session strong { color: #fff; }
+
+        @media print {
+            body { background: #050505; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .pricing-container { page-break-inside: avoid; }
+            .collapsed .desc .d-rest { display: inline; }
+            .collapsed .desc .d-short::after { content: none; }
+            .collapsed .features-list li.extra { display: block; }
+            .toggle-btn { display: none; }
+        }
+
+        .features-list li { cursor: text; transition: background 0.2s, outline-color 0.2s; }
+        .features-list li:hover { background: rgba(255,255,255,0.03); }
+        .features-list li.editing {
+            outline: 1px dashed rgba(255,255,255,0.7);
+            outline-offset: 6px;
+            background: rgba(255,255,255,0.06);
+            cursor: text;
+        }
+        #editor-toolbar {
+            position: fixed; bottom: 20px; left: 20px; z-index: 9999;
+            display: flex; align-items: center; gap: 14px;
+            background: rgba(20,20,20,0.92); border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px; padding: 10px 16px; font-size: 0.85rem; color: #ccc;
+            backdrop-filter: blur(8px); direction: rtl;
+        }
+        #editor-toolbar kbd {
+            background: #333; border: 1px solid #555; border-radius: 4px;
+            padding: 1px 6px; font-size: 0.78rem; color: #fff;
+        }
+        #save-final-btn {
+            background: #fff; color: #000; border: none; border-radius: 6px;
+            padding: 8px 16px; font-weight: bold; font-family: inherit; cursor: pointer;
+        }
+        #save-final-btn:hover { background: #ddd; }
+
+        @media (max-width: 1200px) {
+            body { min-width: 100%; padding: 20px 10px; }
+            .pricing-container { display: flex; flex-direction: column; gap: 20px; }
+            .plan-card, .plan-4, .plan-5 { margin-top: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <h1>مسار الإعداد الاحترافي لتعلم الآلة</h1>
+    </div>
+
+    <div class="path-section">
+        <div class="path-banner">
+            <div class="pb-main">تفاعل مباشر وتركيز كامل مخصص لك وحدك</div>
+            <div class="pb-sub">نظام التدريب يعتمد بالكامل على جلسات (واحد لواحد) عبر <span class="pb-tag">Google Meet</span> أو <span class="pb-tag">Zoom</span></div>
+        </div>
+    </div>
+
+    <div class="pricing-container">
+
+        <div class="plan-card plan-1 collapsible collapsed">
+            <div class="plan-title">دورة معالجة البيانات</div>
+            <div class="plan-desc">كورس مستقل لبناء أساس تقني صلب في التعامل مع البيانات الخام وتنظيفها برمجيًا، تبدأ فيه من الصفر مع مكتبتي NumPy و Pandas وتتدرج خطوة بخطوة من فهم المصفوفات إلى معالجة الجداول الحقيقية. شرح مبسّط بأمثلة تطبيقية بعد كل مفهوم، وتمارين عملية على بيانات واقعية، بحيث تنتهي من الدورة وأنت قادر على قراءة أي ملف بيانات وتنظيفه وتجهيزه للتحليل بثقة، وبفهم منطق عمل الدوال بدل حفظها.</div>
+            <div class="plan-price">$90 <span class="old-price">$130</span><span>/ دورة</span></div>
+            <div class="libs"><span class="lib">NumPy</span><span class="lib">Pandas</span></div>
+            <div class="section-label">المحتوى التقني التفصيلي:</div>
+            <div class="features-wrap"><ul class="features-list">
+                <li class="live-session"><strong>جلسات فردية (1-on-1)</strong><span class="desc"><span class="d-short">شرح مباشر، مرن، ومخصص بالكامل</span><span class="d-rest"> لمستوى استيعابك وتفرغك.</span></span></li>
+                <li><strong>احتراف NumPy</strong><span class="desc"><span class="d-short">فهم هيكلة المصفوفات، الأبعاد، الفهرسة</span><span class="d-rest"> المتقدمة، والتقطيع (Slicing) باحتراف.</span></span></li>
+                <li><strong>العمليات الرياضية السريعة</strong><span class="desc"><span class="d-short">تطبيق الدوال الإحصائية (Mean, Variance)،</span><span class="d-rest"> وفهم آلية البث (Broadcasting) لتسريع الأكواد.</span></span></li>
+                <li><strong>بناء هيكل البيانات بـ Pandas</strong><span class="desc"><span class="d-short">إنشاء Series و DataFrames من</span><span class="d-rest"> الصفر أو استخراجها من نصوص وقواميس.</span></span></li>
+                <li class="last-visible"><strong>استيراد وتصدير البيانات</strong><span class="desc"><span class="d-short">قراءة ملفات CSV و Excel،</span><span class="d-rest"> اكتشاف هيكلها السريع باستخدام دوال الاستكشاف (info, describe).</span></span></li>
+                <li class="extra"><strong>التصفية والتحديد الدقيق</strong><span class="desc"><span class="d-short">استخدام (loc و iloc) لتحديد</span><span class="d-rest"> البيانات، وتطبيق الشروط المنطقية المعقدة لاستخراج رؤى محددة.</span></span></li>
+                <li class="extra"><strong>تنظيف البيانات (Data Cleaning)</strong><span class="desc"><span class="d-short">اكتشاف ومعالجة القيم المفقودة (NaN)،</span><span class="d-rest"> إزالة التكرارات، وتصحيح أنواع الأعمدة.</span></span></li>
+                <li class="extra"><strong>تطبيقات فورية</strong><span class="desc"><span class="d-short">كتابة كود تطبيقي بعد كل</span><span class="d-rest"> مفهوم لضمان ترسيخ المعلومة في الذاكرة.</span></span></li>
+            </ul>
+            <button class="toggle-btn" type="button" aria-expanded="false">عرض المزيد ▾</button>
+            </div>
+            <div class="plan-actions">
+                <a class="btn-wa" href="https://wa.me/201270189407?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%D8%A9%20%D8%A7%D9%84%D9%84%D9%87%20%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D8%B3%D8%A7%D8%B1%20%D8%AA%D8%B9%D9%84%D9%85%20%D8%A7%D9%84%D8%A2%D9%84%D8%A9%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20%3A%20%22%D8%AF%D9%88%D8%B1%D8%A9%20%D9%85%D8%B9%D8%A7%D9%84%D8%AC%D8%A9%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%22%20%D8%A8%D8%B3%D8%B9%D8%B1%20%2290%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%22" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>واتساب</span></a>
+            </div>
+        </div>
+
+        <div class="plan-card plan-2 collapsible collapsed">
+            <div class="plan-title">دورة تصوير البيانات</div>
+            <div class="plan-desc">كورس مستقل لتعلم فن وعلم رسم البيانات لاستخراج الرؤى البصرية واكتشاف الأنماط، لا يقتصر على كتابة أكواد الرسم بل يعلّمك كيف تقرأ الرسمة وتفسّر ما تقوله البيانات. تبدأ بأساسيات Matplotlib ثم تنتقل إلى Seaborn لرسم الأشكال الإحصائية، مع تخصيص كامل للألوان والمحاور والعناوين لإنتاج رسوم احترافية جاهزة للتقارير، وتطبيقات على بيانات حقيقية لاختيار الرسم الأنسب.</div>
+            <div class="plan-price">$80 <span class="old-price">$115</span><span>/ دورة</span></div>
+            <div class="libs"><span class="lib">Matplotlib</span><span class="lib">Seaborn</span></div>
+            <div class="section-label">المحتوى التقني التفصيلي:</div>
+            <div class="features-wrap"><ul class="features-list">
+                <li class="live-session"><strong>جلسات فردية (1-on-1)</strong><span class="desc"><span class="d-short">توجيه مباشر يعلمك كيف "تقرأ"</span><span class="d-rest"> الرسمة وليس فقط كيف تبرمجها.</span></span></li>
+                <li><strong>أساسيات Matplotlib</strong><span class="desc"><span class="d-short">رسم المخططات الخطية (Line)، المبعثرة</span><span class="d-rest"> (Scatter)، والأعمدة (Bar) لاكتشاف الاتجاهات.</span></span></li>
+                <li><strong>تحليل التوزيعات</strong><span class="desc"><span class="d-short">فهم المدرجات التكرارية (Histograms) وكيفية</span><span class="d-rest"> قراءة توزيع البيانات بوضوح.</span></span></li>
+                <li><strong>التخصيص الجمالي والاحترافي</strong><span class="desc"><span class="d-short">التحكم التام بالألوان، المحاور، العناوين،</span><span class="d-rest"> ووسائل الإيضاح لإنتاج رسوم جاهزة للتقارير.</span></span></li>
+                <li class="last-visible"><strong>لوحات الرسوم المتعددة</strong><span class="desc"><span class="d-short">استخدام Subplots لدمج عدة مخططات</span><span class="d-rest"> في لوحة واحدة للمقارنة.</span></span></li>
+                <li class="extra"><strong>إمكانيات Seaborn الإحصائية</strong><span class="desc"><span class="d-short">رسم الـ Boxplot و Violin</span><span class="d-rest"> plot لاكتشاف القيم الشاذة (Outliers) بسهولة.</span></span></li>
+                <li class="extra"><strong>كشف العلاقات المعقدة</strong><span class="desc"><span class="d-short">بناء مصفوفات الارتباط (Heatmap) لمعرفة</span><span class="d-rest"> تأثير المتغيرات على بعضها، ورسم الـ Pairplot.</span></span></li>
+                <li class="extra"><strong>التصنيف اللوني (Hue)</strong><span class="desc"><span class="d-short">تمييز الفئات داخل البيانات برمجيًا</span><span class="d-rest"> وبضغطة زر لاكتشاف سلوك كل فئة على حدة.</span></span></li>
+            </ul>
+            <button class="toggle-btn" type="button" aria-expanded="false">عرض المزيد ▾</button>
+            </div>
+            <div class="plan-actions">
+                <a class="btn-wa" href="https://wa.me/201270189407?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%D8%A9%20%D8%A7%D9%84%D9%84%D9%87%20%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D8%B3%D8%A7%D8%B1%20%D8%AA%D8%B9%D9%84%D9%85%20%D8%A7%D9%84%D8%A2%D9%84%D8%A9%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20%3A%20%22%D8%AF%D9%88%D8%B1%D8%A9%20%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%22%20%D8%A8%D8%B3%D8%B9%D8%B1%20%2280%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%22" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>واتساب</span></a>
+            </div>
+        </div>
+
+        <div class="plan-card plan-3 collapsible collapsed">
+            <div class="plan-title">الخطة الشاملة الأساسية</div>
+            <div class="plan-desc">تجمع دورتي البيانات والتصوير لتمنحك دورة متكاملة لتحليل البيانات قبل خوارزميات الآلة. تتعلم المكتبات الأربع الأساسية وكيف تعمل معًا في خطوة واحدة، من تنظيف الجداول الضخمة إلى تجميعها وتحليلها ورسم نتائجها، وتنتهي بمشروع شامل يطبّق كل ما درسته من البداية إلى النهاية، لتبدأ بعدها في تعلم الآلة بأساس واضح ومريح وثقة كاملة في التعامل مع البيانات، مع تمارين تطبيقية متنوعة.</div>
+            <div class="plan-price">$150 <span class="old-price">$220</span><span>/ خطة</span></div>
+            <div class="libs"><span class="lib">NumPy</span><span class="lib">Pandas</span><span class="lib">Matplotlib</span><span class="lib">Seaborn</span></div>
+            <div class="section-label">المحتوى التقني التفصيلي:</div>
+            <div class="features-wrap"><ul class="features-list">
+                <li class="live-session"><strong>جلسات فردية (1-on-1)</strong><span class="desc"><span class="d-short">ربط عملي مباشر بين معالجة</span><span class="d-rest"> البيانات وتصويرها، وبناء الأساسيات اللازمة للبدء في تعلم الآلة مباشرة.</span></span></li>
+                <li class=""><strong>شرح كل الأساسيات اللازمة لتعلم الآلة</strong><span class="desc"><span class="d-short">تأسيس شامل لكل دوال المكتبات</span><span class="d-rest"> الأربع (الأساسية فقط) دون أي اختصار.</span></span></li>
+                <li class=""><strong>ربط المكتبات برمجيًا</strong><span class="desc"><span class="d-short">كيفية تنظيف جدول ضخم بـ</span><span class="d-rest"> Pandas وتمريره مباشرة للرسم بـ Seaborn في خطوة واحدة.</span></span></li>
+                <li><strong>دوال التجميع والتحليل (Groupby)</strong><span class="desc"><span class="d-short">تقسيم البيانات لفئات، إجراء عمليات</span><span class="d-rest"> حسابية عليها، ورسم نتائجها فورًا.</span></span></li>
+                <li class="last-visible"><strong>التعامل المبدئي مع التواريخ</strong><span class="desc"><span class="d-short">تحويل النصوص إلى Datetime ورسم</span><span class="d-rest"> المخططات الزمنية البسيطة لمعرفة التغيرات.</span></span></li>
+                <li class="extra"><strong>مشروع شامل (End-to-End)</strong><span class="desc"><span class="d-short">استلام بيانات خام، تنظيفها، تجميعها،</span><span class="d-rest"> استخراج الرؤى منها، وتصويرها في تقرير متكامل.</span></span></li>
+            </ul>
+            <button class="toggle-btn" type="button" aria-expanded="false">عرض المزيد ▾</button>
+            </div>
+            <div class="plan-actions">
+                <a class="btn-wa" href="https://wa.me/201270189407?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%D8%A9%20%D8%A7%D9%84%D9%84%D9%87%20%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D8%B3%D8%A7%D8%B1%20%D8%AA%D8%B9%D9%84%D9%85%20%D8%A7%D9%84%D8%A2%D9%84%D8%A9%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20%3A%20%22%D8%A7%D9%84%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84%D8%A9%20%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9%22%20%D8%A8%D8%B3%D8%B9%D8%B1%20%22150%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%22" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>واتساب</span></a>
+            </div>
+        </div>
+
+        <div class="plan-card plan-4 collapsible collapsed">
+            <div class="marketing-badge" style="background: #bbb; color: #000;">الخطة الأكثر طلبًا</div>
+            <div class="plan-title">الخطة المتقدمة (هندسة البيانات)</div>
+            <div class="plan-desc">تتجاوز الأساسيات لتدخل في عمق هندسة الميزات والتعامل مع مصادر البيانات المعقدة والمبعثرة والتجهيز الحقيقي لتعلم الآلة وتجهيز بيئة عمل كاملة. تشمل الخطة دمج الجداول واستخراج البيانات من قواعد البيانات والتحليل الزمني ومعالجة النصوص، وإعداد بيئة العمل (Jupyter والبيئات الافتراضية و PyCharm)، وتنتهي بأول مشروع حقيقي بـ scikit-learn، لتبدأ تعلم الآلة مباشرة دون أن تتفاجأ بأي دالة جديدة.</div>
+            <div class="plan-price">$219 <span class="old-price">$320</span><span>/ خطة</span></div>
+            <div class="libs"><span class="lib">NumPy</span><span class="lib">Pandas</span><span class="lib">Matplotlib</span><span class="lib">Seaborn</span><span class="lib" style="direction: rtl;">مقدمة إلى scikit-learn</span></div>
+            <div class="section-label">المحتوى التقني التفصيلي:</div>
+            <div class="features-wrap"><ul class="features-list">
+                <li class="live-session"><strong>جلسات فردية (1-on-1)</strong><span class="desc"><span class="d-short">للمستويات المتقدمة التي تهدف لبناء</span><span class="d-rest"> أساس متين في هذه المكتبات قبل الانتقال للمستويات الاحترافية في تعلم الآلة، ولكي لا يتفاجئ الدارس بهذه الدوال عند دراسة تعلم الآلة يبدأ بتعلمها من جديد.</span></span></li>
+                <li><strong>تشمل الخطة الأساسية بالكامل</strong><span class="desc"><span class="d-short">تأسيس متين قبل الانطلاق للمراحل</span><span class="d-rest"> المتقدمة.</span></span></li>
+                <li><strong>الدمج المتقدم للجداول العلائقية</strong><span class="desc"><span class="d-short">احتراف (Merge, Join, Concat) للتعامل</span><span class="d-rest"> مع البيانات القادمة من جداول مختلفة.</span></span></li>
+                <li><strong>استخراج البيانات من قواعد البيانات</strong><span class="desc"><span class="d-short">الاتصال بـ SQL/SQLite واستيراد البيانات</span><span class="d-rest"> ومعالجتها مباشرة بـ Pandas.</span></span></li>
+                <li class="last-visible"><strong>هندسة الميزات (Feature Engineering)</strong><span class="desc"><span class="d-short">تشفير الفئات (Label/One-Hot Encoding)، وخلق</span><span class="d-rest"> متغيرات جديدة لتحسين النماذج.</span></span></li>
+                <li class="extra"><strong>التحليل الزمني المتقدم (Time Series)</strong><span class="desc"><span class="d-short">تحليل الموسمية، Resample، واستخدام دوال</span><span class="d-rest"> الإزاحة والتدحرج (Rolling &amp; Shift).</span></span></li>
+                <li class="extra"><strong>معالجة النصوص (Regex)</strong><span class="desc"><span class="d-short">استخدام التعابير القياسية ودوال النصوص</span><span class="d-rest"> لتنظيف البيانات النصية الفوضوية المعقدة.</span></span></li>
+                <li class="extra"><strong>التحليل المحوري المتقدم</strong><span class="desc"><span class="d-short">بناء الجداول المحورية (Pivot Tables)</span><span class="d-rest"> والـ Crosstab لاكتشاف العلاقات الخفية الدقيقة.</span></span></li>
+                <li class="extra"><strong>توحيد المقاييس (Scaling)</strong><span class="desc"><span class="d-short">تطبيق StandardScaler و MinMaxScaler لتهيئة</span><span class="d-rest"> الأرقام لخوارزميات الذكاء الاصطناعي.</span></span></li>
+                <li class="extra"><strong>تجهيز هيكل البيانات (Train/Test)</strong><span class="desc"><span class="d-short">كيفية تجهيز شكل الجدول النهائي</span><span class="d-rest"> الذي تقبله خوارزميات تعلم الآلة لاحقًا.</span></span></li>
+                <li class="extra"><strong>Jupyter Notebook و JupyterLab</strong><span class="desc"><span class="d-short">شرح شامل لبيئتي العمل، وطريقة</span><span class="d-rest"> تنظيم الدفاتر والخلايا والإضافات واستخدامهما في تحليل البيانات وتعلم الآلة.</span></span></li>
+                <li class="extra"><strong>البيئات الافتراضية ومشاركتها</strong><span class="desc"><span class="d-short">إنشاء بيئات افتراضية معزولة لكل</span><span class="d-rest"> مشروع، وتصدير البيئة ومشاركتها مع الآخرين لإعادة تشغيل المشروع بنفس الإعدادات والمكتبات.</span></span></li>
+                <li class="extra"><strong>الطرق الاحترافية لاختصار الوقت</strong><span class="desc"><span class="d-short">تغطية كافة الأساليب الاحترافية لتسريع</span><span class="d-rest"> العمل، وجميع اختصارات لوحة المفاتيح المفيدة في تعلم الآلة في دروس منفصلة تهدف لتسريع الإنتاجية.</span></span></li>
+                <li class="extra"><strong>ميزات PyCharm لتعلم الآلة وعرض البيانات</strong><span class="desc"><span class="d-short">شرح ميزات PyCharm التي تخدم</span><span class="d-rest"> تعلم الآلة، بما فيها استعراض البيانات والجداول والرسوم داخل البيئة.</span></span></li>
+                <li class="extra"><strong>تغطية كاملة للدوال</strong><span class="desc"><span class="d-short">شرح جميع الدوال الأساسية والمتوسطة</span><span class="d-rest"> والمتقدمة في المكتبات المعتمدة في الخطة والدخول في جميع أقسام المكتبات وفهم الاستخدامات للدوال التي قد يحتاج لها الدارس لاحقا في سيناريوهات متقدمة.</span></span></li>
+                <li class="extra"><strong>مشروع تعلم آلة فعلي بـ scikit-learn</strong><span class="desc"><span class="d-short">في نهاية الدورة نبني أول</span><span class="d-rest"> مشروع تعلم آلة حقيقي باستخدام مكتبة scikit-learn ونطبق المفاهيم عمليًا، ونستعدّ فعليا للبدء في تعلم الآلة، يُلِمّ الدارس بالفكرة العامة لمجال تعلم الآلة للبدء فيه بعد الدورة مباشرةً بأساس متين في جميع المكتبات، وبمشروع عملي.</span></span></li>
+            </ul>
+            <button class="toggle-btn" type="button" aria-expanded="false">عرض المزيد ▾</button>
+            </div>
+            <div class="plan-actions">
+                <a class="btn-wa" href="https://wa.me/201270189407?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%D8%A9%20%D8%A7%D9%84%D9%84%D9%87%20%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D8%B3%D8%A7%D8%B1%20%D8%AA%D8%B9%D9%84%D9%85%20%D8%A7%D9%84%D8%A2%D9%84%D8%A9%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20%3A%20%22%D8%A7%D9%84%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D9%82%D8%AF%D9%85%D8%A9%20%28%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%29%22%20%D8%A8%D8%B3%D8%B9%D8%B1%20%22219%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%22" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>واتساب</span></a>
+            </div>
+        </div>
+
+        <div class="plan-card plan-5 collapsible collapsed">
+            <div class="marketing-badge" style="background: #fff; color: #000;">للراغبين في أعلى درجة الاتقان</div>
+            <div class="plan-title">الخطة الاحترافية المتميزة</div>
+            <div class="plan-desc">الإلمام المطلق بأدق تفاصيل المكتبات، تدريب مكثف جدا للدارس وأمثلة كثيرة وتدريبات عديدة متنوعة، الجبر الخطي باستخدام مكتبة NumPy، ومحاكاة بيئة الشركات لضمان الاحتراف، وإنشاء أول نموذج مصغّر لتعلم الآلة، دورة تهدف بشكل أساسي إلى إتقان حقيقي واستيعاب شامل وتدريب مكثف جدا للتمكن من المفاهيم بشكل عميق ولترسيخ استخدام الدوال بسبب الأمثلة العديدة والتمارين المكثفة.</div>
+            <div class="plan-price">$299 <span class="old-price">$430</span><span>/ خطة</span></div>
+            <div class="libs"><span class="lib">NumPy</span><span class="lib">Pandas</span><span class="lib">Matplotlib</span><span class="lib">Seaborn</span><span class="lib" style="direction: rtl;">مقدمة إلى scikit-learn</span></div>
+            <div class="section-label">المحتوى التقني التفصيلي:</div>
+            <div class="features-wrap"><ul class="features-list">
+                <li class="live-session"><strong>جلسات فردية (1-on-1)</strong><span class="desc"><span class="d-short">محاكاة حقيقية لبيئة العمل (Mentorship)</span><span class="d-rest"> وتجهيزك لسوق العمل.</span></span></li>
+                <li class="title-only"><strong>تشمل الخطة المتقدمة بالكامل</strong></li>
+                <li class="includes-wrap"><ul class="includes-grid">
+                    <li>الدمج المتقدم للجداول العلائقية</li>
+                    <li>استخراج البيانات من قواعد البيانات</li>
+                    <li class="last-visible">هندسة الميزات (Feature Engineering)</li>
+                    <li class="extra">التحليل الزمني المتقدم (Time Series)</li>
+                    <li class="extra">معالجة النصوص (Regex)</li>
+                    <li class="extra">التحليل المحوري المتقدم</li>
+                    <li class="extra">توحيد المقاييس (Scaling)</li>
+                    <li class="extra">تجهيز هيكل البيانات (Train/Test)</li>
+                    <li class="extra">Jupyter Notebook و JupyterLab</li>
+                    <li class="extra">البيئات الافتراضية ومشاركتها</li>
+                    <li class="extra">الطرق الاحترافية لاختصار الوقت</li>
+                    <li class="extra">ميزات PyCharm لتعلم الآلة وعرض البيانات</li>
+                    <li class="extra">تغطية كاملة للدوال</li>
+                </ul></li>
+                <li class="plus-label extra"><strong>بالإضافة إلى:</strong></li>
+                <li class="extra"><strong>تدريب مكثف لا يترك ثغرة</strong><span class="desc"><span class="d-short">شرح تفصيلي مع أمثلة متعددة</span><span class="d-rest"> لكل دالة، مع كويزات تفاعلية أثناء الشرح تتكون من ثلاثة أسئلة سهل، متوسط، صعب، وشرح لكل سؤال وهذا في أثناء الجلسة لضمان الفهم العميق، قبل الانتقال للدوال التالية.</span></span></li>
+                <li class="extra"><strong>تبسيط الجبر الخطي المعقد في NumPy</strong><span class="desc"><span class="d-short">الضرب المصفوفي، إيجاد المعكوس، المحددات،</span><span class="d-rest"> القيم الذاتية (Eigenvalues)، والتفكيك (SVD).</span></span></li>
+                <li class="extra"><strong>تحسين الأداء (Optimization)</strong><span class="desc"><span class="d-short">استراتيجيات تقليل استهلاك الذاكرة وتسريع</span><span class="d-rest"> الكود عند التعامل مع البيانات الضخمة (Big Data)، للتهيئة للتعامل مع الكميات الهائلة من البيانات وللمشاريع المتقدمة جدا في الحياة الواقعية.</span></span></li>
+                <li class="extra"><strong>محاكاة البيانات المليئة بالمشكلات (Messy Data)</strong><span class="desc"><span class="d-short">التعامل مع حزم بيانات حقيقية</span><span class="d-rest"> من منصة Kaggle مليئة بالمشاكل وكيفية حلها برمجيًا ورياضيًا، ومحاكاة السيناريوهات العملية عند العمل في للشركات الكبرى.</span></span></li>
+                <li class="extra"><strong>أتمتة تقارير البيانات (Automated EDA)</strong><span class="desc"><span class="d-short">بناء دوال برمجية تقوم بتحليل</span><span class="d-rest"> الجداول وتصدير الرؤى بشكل آلي دون تدخل بشري.</span></span></li>
+                <li class="extra"><strong>واجبات تفصيلية على مستوى الدالة</strong><span class="desc"><span class="d-short">الواجبات لا تشمل الدرس كَكُل،</span><span class="d-rest"> بل تدريبات مكثفة كل تدريب يركز على استخدام دالة واحدة من الدوال التي تم شرحها، لضمان استيعاب شامل ومكثف جدا لكل دالة تم شرحها على حدة.</span></span></li>
+                <li class="extra"><strong>مشاريع ضخمة لمعرض أعمالك (Portfolio)</strong><span class="desc"><span class="d-short">مشاريع نهائية بعد كل فصل،</span><span class="d-rest"> لمراجعة كل ما تم شرحه مراجعة شاملة، تهدف لتثبيت المعلومات وترسيخها بشكل أكبر وأعمق للدارس، وإنشاء مشاريع في نهاية كل مكتبة تثبت جدارتك وقابلة للإضافة المباشرة لسيرتك الذاتية، وتمرين شامل يجمع بين أكبر كمّ من الدوال المشروحة ليختبر الطالب فهمه الحقيقي قبل الانتقال للمكتبات الثانية، مع تفصيل حل التمرين الشامل ليكون بمكانة المراجعة الشاملة الثانية لضمان تمكُّن راسخ للشرح ولصعوبة نسيان المعلومات المدروسة.</span></span></li>
+                <li class="extra"><strong>شرح تفصيلي لكل استخدامات الدوال</strong><span class="desc"><span class="d-short">تغطية كل استخدامات الدالة وليس</span><span class="d-rest"> الاستخدامات الشائعة فقط، مع الدخول العميق في المفاهيم المتقدمة للمكتبات (ينصح به للمستويات الاحترافية جدا ولحل أصعب أسئلة في المقابلات الشخصية للعمل).</span></span></li>
+                <li class="extra"><strong>أمثلة مكثفة من الحياة الواقعية</strong><span class="desc"><span class="d-short">عدد كبير من الأمثلة العملية</span><span class="d-rest"> الواقعية لكل دالة لربط الشرح بمشكلات حقيقية وأكثر من سيناريو للمشكلات الفعلية التي ستستخدم هذه الدالة في الحياة العملية.</span></span></li>
+                <li class="extra"><strong>الأساس النظري لكل دالة</strong><span class="desc"><span class="d-short">شرح الفكرة العلمية التي بُنيت</span><span class="d-rest"> عليها الدالة ولماذا تعمل بهذه الطريقة، وما معنى اسم كل دالة ولماذا ترمز (لأن معظم الدول تكون مكتوبة كاختصارات).</span></span></li>
+                <li class="extra"><strong>التأسيس الرياضي قبل كل دالة</strong><span class="desc"><span class="d-short">شرح المفاهيم الرياضية اللازمة قبل</span><span class="d-rest"> كل دالة مبنية على مفاهيم رياضية، قبل الانتقال إلى تطبيقها برمجيًا.</span></span></li>
+                <li class="extra"><strong>مشروع تعلم آلة فعلي بـ scikit-learn</strong><span class="desc"><span class="d-short">في نهاية الدورة نبني أول</span><span class="d-rest"> مشروع تعلم آلة حقيقي باستخدام مكتبة scikit-learn ونطبق المفاهيم عمليًا، ونستعدّ فعليا للبدء في تعلم الآلة، يُلِمّ الدارس بالفكرة العامة لمجال تعلم الآلة للبدء فيه بعد الدورة مباشرةً بأساس متين في جميع المكتبات، وبمشروع عملي.</span></span></li>
+            </ul>
+            <button class="toggle-btn" type="button" aria-expanded="false">عرض المزيد ▾</button>
+            </div>
+            <div class="plan-actions">
+                <a class="btn-wa" href="https://wa.me/201270189407?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%88%D8%B1%D8%AD%D9%85%D8%A9%20%D8%A7%D9%84%D9%84%D9%87%20%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D8%AF%20%D9%84%D9%85%D8%B3%D8%A7%D8%B1%20%D8%AA%D8%B9%D9%84%D9%85%20%D8%A7%D9%84%D8%A2%D9%84%D8%A9%20%D9%85%D8%B3%D8%AA%D9%88%D9%89%20%3A%20%22%D8%A7%D9%84%D8%AE%D8%B7%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9%20%D8%A7%D9%84%D9%85%D8%AA%D9%85%D9%8A%D8%B2%D8%A9%22%20%D8%A8%D8%B3%D8%B9%D8%B1%20%22299%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%22" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>واتساب</span></a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var card = btn.closest('.plan-card');
+                var collapsed = card.classList.toggle('collapsed');
+                btn.textContent = collapsed ? 'عرض المزيد ▾' : 'عرض أقل ▴';
+                btn.setAttribute('aria-expanded', String(!collapsed));
+            });
+        });
+    </script>
+
+</body></html>
